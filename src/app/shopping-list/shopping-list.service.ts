@@ -8,7 +8,7 @@ export class ShoppingListService {
     private ingredients: Ingredient[] = [
         new Ingredient('Eggs', 5),
         new Ingredient('Tomatoes', 10),
-    ];
+    ]
 
     getIngredient(index: number) {
         return this.ingredients[index];
@@ -18,12 +18,12 @@ export class ShoppingListService {
         return this.ingredients.slice();
     }
 
-    addIngredient(ingredient: Ingredient) {
+    addIngredient(ingredient: Ingredient){
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
 
-    updateIngredient(index: number, newIngredient: Ingredient) {
+    updateIngredient(index: number, newIngredient: Ingredient){
         this.ingredients[index] = newIngredient;
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
@@ -33,8 +33,8 @@ export class ShoppingListService {
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
 
-    addIngredients(ingredients: Ingredient[]) {
-        for (let ingredient of ingredients) {
+    addIngredients(ingredients: Ingredient[]){
+        for(let ingredient of ingredients){
             this.addIngredient(ingredient);
         }
     }
